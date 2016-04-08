@@ -8,7 +8,8 @@ angular.module('ng-gulp-hapi', [
   'ngSanitize',
   'ui.router',
   'ui.lodash',
-  'gettext'
+  'gettext',
+  'angularModalService'
 ])
   .config(function ($provide, $stateProvider, $urlRouterProvider, $httpProvider, $animateProvider) {
     $urlRouterProvider.otherwise('/prequalify');

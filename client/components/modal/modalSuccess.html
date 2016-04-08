@@ -1,0 +1,18 @@
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">You are qualified</h4>
+      </div>
+      <div class="modal-body">
+        <p>Congratulations {{modalSuccess.applicant}}, you are qualified for ${{modalSuccess.qualifiedAmount}}, please click the button below to start your application!</p>
+      </div>
+      <div class="modal-footer">
+        <a ng-href="{{modalSuccess.redirectURL}}" target="_blank" class="btn btn-primary">
+            Apply
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
