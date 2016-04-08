@@ -1,78 +1,88 @@
 
-
-<form name="myForm" class="form-horizontal" ng-submit="submit()" novalidate>
-    <div class="form-group">
+ <!-- && !myForm.lastName.$pristine -->
+<form name="myForm" class="form-horizontal" ng-submit="submit(myForm.$valid)" novalidate>
+    <div class="form-group" ng-class="{'has-error': showErrorMessage && myForm.firstName.$invalid}">
         <label class="col-xs-4 control-label">First Name</label>
         <div class="col-xs-5">
             <input type="text" class="form-control" name="firstName" ng-model="firstName" placeholder="First name" required />
+            <p ng-show="showErrorMessage && myForm.firstName.$invalid" class="help-block">First name is required.</p>
         </div>
-        <span class="help-block" ng-show="myForm.firstName.$valid">Required</span>
     </div>
 
-    <div class="form-group" ng-class="{'has-error': myForm.lastName.$error}">
+    <div class="form-group" ng-class="{'has-error': showErrorMessage && myForm.lastName.$invalid}">
         <label class="col-xs-4 control-label">Last Name</label>
         <div class="col-xs-5">
             <input type="text" class="form-control" name="lastName" ng-model="lastName" placeholder="Last name" required />
-            <p ng-show="myForm.lastName.$invalid && !myForm.name.$pristine" class="help-block">You name is required.</p>
+            <p ng-show="showErrorMessage && myForm.lastName.$invalid" class="help-block">Last name is required.</p>
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error': showErrorMessage && myForm.email.$invalid}">
         <label class="col-xs-4 control-label">Email Address</label>
         <div class="col-xs-5">
-            <input type="text" class="form-control" name="email" ng-model="emailAddress" placeholder="Email address" required />
+            <input type="email" class="form-control" name="email" ng-model="emailAddress" placeholder="Email address" required />
+            <p ng-show="showErrorMessage && myForm.email.$error.required" class="help-block">Email address is required.</p>
+            <p ng-show="showErrorMessage && myForm.email.$error.email" class="help-block">This is not a valid email address.</p>
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error': showErrorMessage && myForm.bussinessName.$invalid}">
         <label class="col-xs-4 control-label">Bussiness Name</label>
         <div class="col-xs-5">
             <input type="text" class="form-control" name="bussinessName" ng-model="businessName" placeholder="Bussiness name" required />
+            <p ng-show="showErrorMessage && myForm.bussinessName.$invalid" class="help-block">Bussiness name is required.</p>
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error': showErrorMessage && myForm.phoneNumber.$invalid}">
         <label class="col-xs-4 control-label">Phone Number</label>
         <div class="col-xs-5">
-            <input type="text" class="form-control" name="phoneNumber" ng-model="phoneNumber" placeholder="Phone number" required />
+            <input type="text" class="form-control" name="phoneNumber" ng-model="phoneNumber" placeholder="Phone number" phone-input ng-model="phoneNumber" ng-minlength="14" ng-maxlength="14" required />
+            <p ng-show="showErrorMessage && myForm.phoneNumber.$error.required" class="help-block">Phone number is required.</p>
+            <p ng-show="showErrorMessage && myForm.phoneNumber.$error.minlength" class="help-block">This is not a valid phone number.</p>
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error': showErrorMessage && myForm.yearStarted.$invalid}">
         <label class="col-xs-4 control-label">Year Started</label>
         <div class="col-xs-2">
-            <input type="text" class="form-control" name="yearStarted" ng-model="yearStarted" placeholder="Year started" required />
+            <input type="text" class="form-control" ng-minlength="4" ng-maxlength="4" name="yearStarted" ng-model="yearStarted" placeholder="Year started" numbers-only="yearStarted" required />
+            <p ng-show="showErrorMessage && myForm.yearStarted.$error.required" class="help-block">Year started is required.</p>
+            <p ng-show="showErrorMessage && (myForm.yearStarted.$error.minlength || myForm.yearStarted.$error.maxlength)" class="help-block">This is not a valid year.</p>
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error': showErrorMessage && myForm.estimatedFICO.$invalid}">
         <label class="col-xs-4 control-label">Estimated FICO Score</label>
         <div class="col-xs-2">
-            <input type="text" class="form-control" name="estimatedFICO" ng-model="estimatedFICO" placeholder="Estimated FICO Credit Score" required />
+            <input type="text" class="form-control" name="estimatedFICO" ng-model="estimatedFICO" placeholder="Estimated FICO Credit Score" numbers-only="estimatedFICO" required />
+            <p ng-show="showErrorMessage && myForm.estimatedFICO.$invalid" class="help-block">Estimate FICO score is required.</p>
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error': showErrorMessage && myForm.estimatedAnnualRevenue.$invalid}">
         <label class="col-xs-4 control-label">Estimated Annual Revenue</label>
         <div class="col-xs-2">
             <div class="input-group">
 				<span class="input-group-addon">$</span>
-				<input type="text" class="form-control" name="estimatedAnnualRevenue" ng-model="estimatedAnnualRevenue" placeholder="Estimated Annual Revenue" required />
+				<input type="text" class="form-control" name="estimatedAnnualRevenue" ng-model="estimatedAnnualRevenue" placeholder="Estimated Annual Revenue" numbers-only="estimatedAnnualRevenue" required />
 			</div>
+            <p ng-show="showErrorMessage && myForm.estimatedAnnualRevenue.$invalid" class="help-block">Estimate annual revenue is required.</p>
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error': showErrorMessage && myForm.grossPercentageFromCards.$invalid}">
         <label class="col-xs-4 control-label">Gross Percentage From Cards</label>
         <div class="col-xs-2">
             <div class="input-group">
-				<input type="text" class="form-control" name="grossPercentageFromCards" ng-model="grossPercentageFromCards" placeholder="Percentage (%) of annual revenue from credit card transactions" required />
+				<input type="text" class="form-control" name="grossPercentageFromCards" ng-model="grossPercentageFromCards" placeholder="Percentage (%) of annual revenue from credit card transactions" numbers-only="grossPercentageFromCards" required />
 				<span class="input-group-addon">%</span>
 			</div>
+            <p ng-show="showErrorMessage && myForm.grossPercentageFromCards.$invalid" class="help-block">Gross percentage from card is required.</p>
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error': showErrorMessage && myForm.typeOfBusiness.$invalid}">
         <label class="col-xs-4 control-label">Type Of Business</label>
         <div class="col-xs-4">
             <select class="form-control" name="typeOfBusiness"
@@ -80,6 +90,7 @@
                     ng-options="type.value as type.text for type in bussinessTypes"
                     placeholder="Type Of Business"
                     required><option value="" selected disabled>Select a bussiness type</option></select>
+            <p ng-show="showErrorMessage && myForm.typeOfBusiness.$invalid" class="help-block">Type of your bussiness is required.</p>
         </div>
     </div>
 
