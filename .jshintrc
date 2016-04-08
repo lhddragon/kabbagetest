@@ -29,7 +29,7 @@
   "bitwise": true,        // Prohibit bitwise operators (&, |, ^, etc.).
   "curly": true,          // Require {} for every new block or scope.
   "eqeqeq": true,         // Require triple equals i.e. `===`.
-  "forin": true,          // Tolerate `for in` loops without `hasOwnPrototype`.
+  "forin": false,          // Tolerate `for in` loops without `hasOwnPrototype`.
   "immed": true,          // Require immediate invocations to be wrapped in parens e.g. `( function(){}() );`
   "latedef": true,        // Prohibit variable use before definition.
   "newcap": true,         // Require capitalization of all constructor functions e.g. `new F()`.
@@ -44,7 +44,7 @@
   "quotmark": "single",   // Enforce use of single quotation marks for strings.
   "unused": true,         // Warn when variables are defined but never used.
   "maxlen": 120,          // Enforce line length to 100 characters
-  "camelcase": true,      // Force all variable names to use either camelCase style or UPPER_CASE with underscores.
+  "camelcase": false,      // Force all variable names to use either camelCase style or UPPER_CASE with underscores.
   "jasmine": true,
 
   // == Relaxing Options ================================================
