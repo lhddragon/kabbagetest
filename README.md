@@ -40,3 +40,12 @@ bower install
 ```
 gulp
 ```
+
+##Unit Test
+
+I have put the unit test code for prequalify.controller.js, it can be run using
+
+```
+gulp test
+```
+However, there are some error related to version compatibility of karma-jasmine, jasmine-jquery, and jasmine. Will fix this later.
