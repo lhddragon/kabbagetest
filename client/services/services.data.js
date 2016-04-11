@@ -34,7 +34,9 @@ angular.module('app.directives').factory('dataService', function($http) {
                 api_key: 'vauwg9sbqkrdnzdmr7eyk92t'
             }
         }).success(function(results) {
-            console.log(results);
+            return results;
+        }).error(function (error) {
+            return error;
         });
 
 

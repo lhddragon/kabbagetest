@@ -35,7 +35,14 @@
     "run-sequence": "^1.1.0",
     "ng-annotate": "^0.15.4",
     "request": "^2.53.0",
-    "karma": "^0.12.32"
+    "karma": "*",
+    "jasmine": "*",
+    "jasmine-jquery": "*",
+    "karma": "*",
+    "karma-coverage": "*",
+    "karma-jasmine": "*",
+    "karma-ng-html2js-preprocessor": "*",
+    "karma-phantomjs-launcher": "^0.1.4"
   },
   "dependencies": {
     "async": "^0.9.0",

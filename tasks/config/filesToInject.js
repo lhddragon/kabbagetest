@@ -6,7 +6,7 @@
 module.exports = [
   'client/app.js',
   'client/lib/**/*.js',
-  'client/components/**/*.js', '!client/components/**/*.spec.js',
+  'client/components/**/*.js', 'client/components/**/*.spec.js',
   'client/directives/**/*.js', '!client/directives/**/*.spec.js',
   'client/filters/**/*.js', '!client/filters/**/*.spec.js',
   'client/resources/**/*.js', '!client/resources/**/*.spec.js',
