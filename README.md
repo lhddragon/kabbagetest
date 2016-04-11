@@ -43,7 +43,7 @@ gulp
 
 ##Unit Test
 
-I have put the unit test code for prequalify.controller.js, it can be run using
+I have put the unit test code for prequalify.controller.js under /client/components/prequalifyPanel/prequalifyPanel.controller.spec.js, it can be run using
 
 ```
 gulp test
