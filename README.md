@@ -8,7 +8,7 @@ make forms to do pre qualification for user
 Clone a copy of the repo:
 
 ```
-git clone https://github.com/lhddragon/kabbagetest.git
+git clone https://github.com/lhddragon/simpleform.git
 ```
 
 Change to the kabbagetest directory:
